@@ -9,7 +9,7 @@ const autor = new require ('./models/autores')
 const comunidade = new require ('./models/comunidades')
 const assinatura = new require ('./models/assinaturas')
 const pagamento = new require ('./models/pagamentos')
-
+const multer = require('multer')
 var porta = '3200'
 
 app.use(express.urlencoded({extended:false}))
