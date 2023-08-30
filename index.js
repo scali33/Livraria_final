@@ -19,4 +19,8 @@ consign()
     .include('./controllers/rotas')
     .into(app)
 
+app.set('view engine', 'pug')
+app.set('views', path.join(__dirname, 'views'))
+app.use(express.static('public'))
+
 app.listen(porta, ()=>console.log(`Servidor rodando em: http:localhost:${porta}`))
