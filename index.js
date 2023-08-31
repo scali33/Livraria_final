@@ -10,7 +10,9 @@ const comunidade = new require ('./models/comunidades')
 const assinatura = new require ('./models/assinaturas')
 const pagamento = new require ('./models/pagamentos')
 const multer = require('multer')
+const path = require('path')
 var porta = '3200'
+global.CAMINHOLIVRO = "public/uploads"
 
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())

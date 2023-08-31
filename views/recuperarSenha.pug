@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet', href='css/recuperarSenha.css')
+        title Recuperação de Senha
+    body
+        .container
+            form.password-recovery-form
+                h2 Recuperação de Senha
+                p Insira seu endereço de e-mail registrado para receber instruções de recuperação de senha.
+                label(for='email') E-mail:
+                input(type='email', id='email', name='email', required)
+                button(type='submit') Enviar Instruções

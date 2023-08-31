@@ -1,0 +1,23 @@
+doctype html
+html(lang='pt-br')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet', href='css/login.css')
+        title Login
+    body
+        #login
+            form.card(method='POST', action='/login')
+                .card-header
+                    h2 Login
+                .card-content
+                    .card-content-area
+                        label(for='usuario') Usuário
+                        input(type='text', id='Gmail', name="Gmail", autocomplete='off')
+                    .card-content-area
+                        label(for='password') Senha
+                        input(type='password', id='senha', name="senha", autocomplete='off')
+                .card-footer
+                    input(type='submit', value='Login', class='submit')
+                    a(href='/recuperar-senha', class='recuperar_senha') Esqueceu a senha?

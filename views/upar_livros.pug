@@ -1,0 +1,12 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title Carregar Livros
+    body
+        .container
+            h2 Carregar Livros
+            form.upload-form(action='/cadastrar/livros', method='post', enctype='multipart/form-data')
+                input(type="file", name="file")
+                button(type='submit') Upload Livro
