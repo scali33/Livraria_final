@@ -18,7 +18,7 @@ module.exports = (app) => {
                 console.log(dados)
                 let token = await auth.gerarToken(dados)
                 console.log('dados: ', dados)
-                res.json({dados,token:token}).status(200)
+                res.redirect('/home');
             }
             else{
                 res.json(validarLogin).status(200)
@@ -26,5 +26,9 @@ module.exports = (app) => {
         }catch(erro){
             res.json(erro).status(400)
         }
+    }),
+    app.get('/home',auth.validarToken, async (req, res)=>{
+        res.render('home.pug')
     })
+
 }

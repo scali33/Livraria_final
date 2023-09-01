@@ -19,5 +19,9 @@ html(lang='pt-br')
                         label(for='password') Senha
                         input(type='password', id='senha', name="senha", autocomplete='off')
                 .card-footer
-                    input(type='submit', value='Login', class='submit')
+                    input(type='submit', value='Login', class='submit', onclick='redirectToHome()')
                     a(href='/recuperar-senha', class='recuperar_senha') Esqueceu a senha?
+    script.
+        function redirectToHome() {
+            window.location.href = '/home';
+        }

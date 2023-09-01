@@ -1,12 +1,29 @@
 doctype html
 html(lang='en')
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1.0')
-        title Carregar Livros
-    body
-        .container
-            h2 Carregar Livros
-            form.upload-form(action='/cadastrar/livros', method='post', enctype='multipart/form-data')
-                input(type="file", name="file")
-                button(type='submit') Upload Livro
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Carregar Livros
+  body
+    .container
+      h2 Carregar Livros
+      form.upload-form(action='/cadastrar/livros', method='post', enctype='multipart/form-data')
+        input(type="file", name="file")
+
+        label(for="nome") Nome:
+        input(type="text", name="nome", id="nome")
+
+        label(for="idioma") Idioma:
+        input(type="text", name="idioma", id="idioma")
+
+        label(for="gen_lit") Gênero Literário:
+        input(type="text", name="gen_lit", id="gen_lit")
+
+        label(for="data_publi") Data de Publicação:
+        input(type="text", name="data_publi", id="data_publi")
+
+        label(for="quant_pags") Quantidade de Páginas:        
+        input(type="number", name="quant_pags", id="quant_pags")
+
+        button(type='submit') Upload Livro
+

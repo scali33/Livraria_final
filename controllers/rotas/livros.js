@@ -41,6 +41,9 @@ module.exports = (app) =>{
             res.json(respBd).status(400)
         
     }})
+    app.get(`/cadastrar/${rota}`, auth.validarToken, async(req, res)=>{
+        res.render("upar_livros.pug")
+    })
     app.get(`/ler/${rota}`, async (req,res)=>{
         res.render("ler.pug")
     })

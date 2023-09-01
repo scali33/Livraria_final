@@ -14,6 +14,7 @@ module.exports ={
     validarToken: (req, res, next)=>{
         try{
             let token = req.headers.authorization
+            console.log('token: ', token)
             token = token.split(' ')
             token = token[1]
             jwt.verify(token, jwtSecret, (erro, dados)=>{
