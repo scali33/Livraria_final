@@ -13,15 +13,16 @@ html(lang='pt-br')
                     h2 Login
                 .card-content
                     .card-content-area
-                        label(for='usuario') Usuário
+                        label(for='usuario') Gmail
                         input(type='text', id='Gmail', name="Gmail", autocomplete='off')
                     .card-content-area
                         label(for='password') Senha
                         input(type='password', id='senha', name="senha", autocomplete='off')
                 .card-footer
-                    input(type='submit', value='Login', class='submit', onclick='redirectToHome()')
+                    input(type='submit', value='Login', class='submit')
                     a(href='/recuperar-senha', class='recuperar_senha') Esqueceu a senha?
-    script.
-        function redirectToHome() {
-            window.location.href = '/home';
-        }
+                    h4 ou
+                    a(href='/cadastrar/usuarios', class='cadastrar')  crie uma conta
+
+
+

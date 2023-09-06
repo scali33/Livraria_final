@@ -3,6 +3,10 @@ const validacao = require('../validacao')
 const auth = require ('../auth')
 const rota = 'usuarios'
 module.exports = (app)=>{
+
+    app.get(`/cadastrar/${rota}`, async (req,res)=>{
+        res.render('cadastro.pug')
+    })
     app.post(`/cadastrar/${rota}`, async (req, res)=>{
         try{
         let dados = req.body
@@ -13,9 +17,10 @@ module.exports = (app)=>{
             dados.senha = await auth.criptografarsenha(dados.senha)
             var respBd = await model.create(dados)
             delete respBd.dataValues.senha
-            res.json(respBd).status(201)
+            console.log('ó ta entrando nesse if')
+            res.render('sucesso.pug')
         }   else{
-            res.json(dadosLogin).status(200)
+            res.render(dadosLogin).status(200)
         }
         }catch{
             res.json(respBd).status(422)

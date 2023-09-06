@@ -1,7 +1,7 @@
 const {Sequelize} = require('sequelize')
 const schema = 'bdlivros'
 const sequelize = new Sequelize(
-    schema, 'root', '', { 
+    schema, 'pao', '123', { 
         host:'localhost', 
         dialect:'mysql', 
         charset: 'utf8',

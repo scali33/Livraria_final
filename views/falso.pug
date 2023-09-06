@@ -1,0 +1,17 @@
+doctype html
+html(lang='pt-br')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title Cadastro Bem-Sucedido
+    body
+        h1 login falhou
+        p email incorreto
+
+        button(type='button', id='btnRedirect') Voltar para o Login
+script.
+    document.getElementById('btnRedirect').addEventListener('click', function() {
+        // Redirecionar para a página de login
+        window.location.href = '/login'; // Substitua '/login' pelo URL correto da página de login
+    });

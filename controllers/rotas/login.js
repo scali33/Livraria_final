@@ -16,18 +16,20 @@ module.exports = (app) => {
                 let {id,nome,Gmail} = validarLogin.usuario.dataValues
                 dados = {id,nome,Gmail}
                 console.log(dados)
-                let token = await auth.gerarToken(dados)
-                console.log('dados: ', dados)
+                dados.token = await auth.gerarToken(dados)
                 res.redirect('/home');
             }
             else{
+                
                 res.json(validarLogin).status(200)
+            
             }
         }catch(erro){
+            res.render('falso.pug')
             res.json(erro).status(400)
         }
     }),
-    app.get('/home',auth.validarToken, async (req, res)=>{
+    app.get('/home',auth.validarToken ,async (req, res)=>{
         res.render('home.pug')
     })
 
